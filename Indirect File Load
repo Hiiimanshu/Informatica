@@ -1,0 +1,26 @@
+Indirect file loading in Informatica Intelligent Cloud Services (IICS) allows you to dynamically reference files in mappings or
+tasks via parameters or variables, rather than hardcoding file paths or names. This provides more flexibility and
+adaptability in your data integration processes.
+
+The key points about indirect file loading in IICS are:
+
+1. It enables you to process multiple files with the same structure and properties using a single source 
+transformation in a mapping. 
+2. Instead of passing the actual source files as input, you pass a "manifest file" that contains a list of all the
+source file names and their directory paths. 
+3.There are three main ways to implement indirect file loading in IICS:
+ a. Using the "File List" option in the source transformation properties. 
+ b. Using the "Command" option in the source transformation properties. 
+ c. Using the Data Integration Quick Start Bundle.
+4. The manifest file must meet certain requirements:
+ a. All files in the list must have the same structure and properties 
+ b. The directory path can be specified, otherwise IICS will look for the files in the same directory as the source connection 
+ c. The directory paths must be local to the secure agent 
+5. Indirect file loading from AWS S3 buckets is also possible, but requires creating a manifest file with the list of S3 file paths. 
+6. Indirect file loading provides more flexibility compared to directly specifying each source file, especially
+when dealing with large numbers of files with the same structure. 
+
+
+In summary, indirect file loading in IICS allows you to dynamically process multiple source files through a single mapping
+by referencing a manifest file, rather than hardcoding individual file paths. This enhances the agility and
+adaptability of your data integration workflows.
